@@ -292,19 +292,15 @@ Answer:
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout_17">
            <item>
-            <widget class="QTextBrowser" name="textBrowser_4">
+            <widget class="QPlainTextEdit" name="plainTextEdit_5">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
-             <property name="html">
-              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Noto Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:16px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji'; font-size:16px; color:#24292f; background-color:#ffffff;&quot;&gt;Residual of the Earth's tides is showing consistent &amp;quot;aether wind&amp;quot; (when the gravimeter is perpendicular to the Sun) or a superimposed comoving gravitational framework.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             <property name="plainText">
+              <string>Residual of the Earth's tides is showing consistent &quot;aether wind&quot; (when the gravimeter is perpendicular to the Sun) or a superimposed comoving gravitational framework.</string>
              </property>
             </widget>
            </item>
