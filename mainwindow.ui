@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>613</height>
+    <height>697</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -56,11 +56,8 @@
               </sizepolicy>
              </property>
              <property name="plainText">
-              <string>Scenario:
-- If you have 1 laser gun emitting a laser of wavelength X on the surface of the Earth
-
-Question:
-- Will the same laser gun emit a laser of wavelength X on the ISS?
+              <string>Question:
+- If you have 1 laser gun emitting a laser of wavelength X on the surface of the Earth, will the same laser gun emit a laser of wavelength X on the ISS as measured by an onboard technician?
 
 Answer:
 - If yes then gravitational redshift is wrong, if no then locality is wrong thus the gravitational redshift is mutually exclusive with locality.</string>
@@ -130,6 +127,28 @@ Answer:
              </property>
              <property name="plainText">
               <string>How can we perform 2 superimposed measurements with 1 gyroscope?</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_7">
+          <property name="title">
+           <string>Light Bending</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_25">
+           <item>
+            <widget class="QPlainTextEdit" name="plainTextEdit_6">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="plainText">
+              <string>It was impossible to predict the light bending without knowing the perihelion precession first.</string>
              </property>
             </widget>
            </item>
@@ -331,7 +350,7 @@ Answer:
       </widget>
       <widget class="QWidget" name="tab_8">
        <attribute name="title">
-        <string>Fire in the Sky</string>
+        <string>Real Abduction</string>
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_24">
         <item>
