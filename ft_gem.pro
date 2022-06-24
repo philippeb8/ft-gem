@@ -1,4 +1,4 @@
-QT += widgets webkit webkitwidgets multimedia multimediawidgets
+QT += widgets multimedia multimediawidgets
 
 HEADERS       = analogclock.h \
   imageviewer.h \

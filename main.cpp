@@ -50,7 +50,6 @@
 
 #include <QApplication>
 #include <QMainWindow>
-#include <QWebSettings>
 #include <QDesktopWidget>
 #include <QNetworkProxyFactory>
 
