@@ -9,5 +9,6 @@
         <file>png/tides.png</file>
         <file>png/dipoles.png</file>
         <file>mp4/lorentz.mp4</file>
+        <file>mp4/fits.mp4</file>
     </qresource>
 </RCC>

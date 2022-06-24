@@ -329,6 +329,16 @@ Answer:
         </item>
        </layout>
       </widget>
+      <widget class="QWidget" name="tab_8">
+       <attribute name="title">
+        <string>Fire in the Sky</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_24">
+        <item>
+         <widget class="VideoPlayer" name="video_3" native="true"/>
+        </item>
+       </layout>
+      </widget>
       <widget class="QWidget" name="tab_2">
        <attribute name="title">
         <string>Force Field</string>
@@ -1587,6 +1597,22 @@ p, li { white-space: pre-wrap; }
     <hint type="destinationlabel">
      <x>259</x>
      <y>129</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tabWidget</sender>
+   <signal>currentChanged(int)</signal>
+   <receiver>video_3</receiver>
+   <slot>play()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>381</x>
+     <y>54</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>375</x>
+     <y>140</y>
     </hint>
    </hints>
   </connection>

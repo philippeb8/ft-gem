@@ -72,6 +72,7 @@ int main(int argc, char *argv[])
     window.video_2->setUrl(QUrl("qrc:/mp4/lorentz.mp4"));
     window.tides_1->loadFile(":/png/tides.png");
     window.dipole_1->loadFile(":/png/dipoles.png");
+    window.video_3->setUrl(QUrl("qrc:/mp4/fits.mp4"));
 
     QRect rec = QApplication::desktop()->screenGeometry();
     win.resize(rec.width(), rec.height());
