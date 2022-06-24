@@ -7,5 +7,6 @@
         <file>png/clock.png</file>
         <file>mp4/drive.mp4</file>
         <file>png/tides.png</file>
+        <file>png/dipoles.png</file>
     </qresource>
 </RCC>

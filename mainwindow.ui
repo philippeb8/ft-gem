@@ -152,7 +152,7 @@ Answer:
            <item>
             <widget class="QTableWidget" name="tableWidget_2">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
@@ -278,6 +278,9 @@ Answer:
               </property>
              </item>
             </widget>
+           </item>
+           <item>
+            <widget class="ImageViewer" name="dipole_1" native="true"/>
            </item>
           </layout>
          </widget>
