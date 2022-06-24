@@ -74,11 +74,11 @@ int main(int argc, char *argv[])
     win.resize(rec.width(), rec.height());
     win.show();
 
-    window.clock_1->startAt(10);
+    window.clock_1->startAt(100);
     window.clock_2->startAt(1);
-    window.ship_1->startAt(10);
+    window.ship_1->startAt(100);
     window.ship_2->startAt(1);
-    window.missile_3->startAt(100, -300.0, 35.0, rec.width(), 100);
+    window.missile_3->startAt(100, -300.0, 40.0, rec.width(), 100);
     window.ship_4->startFor(1, rec.width() / 2);
     window.video_1->play();
 

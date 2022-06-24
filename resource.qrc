@@ -5,7 +5,6 @@
         <file>png/field.png</file>
         <file>png/missile.png</file>
         <file>png/clock.png</file>
-        <file>avi/drive.avi</file>
         <file>mp4/drive.mp4</file>
     </qresource>
 </RCC>
