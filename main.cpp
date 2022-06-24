@@ -68,7 +68,7 @@ int main(int argc, char *argv[])
     window.ship_3->loadFile(":/png/ship2.png");
     window.ship_4->loadFile(":/png/ship1.png");
     window.missile_3->loadFile(":/png/missile.png");
-    window.video_1->setUrl(QUrl("qrc:/avi/drive.avi"));
+    window.video_1->setUrl(QUrl("qrc:/mp4/drive.mp4"));
 
     QRect rec = QApplication::desktop()->screenGeometry();
     win.resize(rec.width(), rec.height());
