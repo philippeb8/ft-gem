@@ -73,25 +73,32 @@ ImageViewer::ImageViewer(QWidget * parent)
     connect(& timer, SIGNAL(timeout()), this, SLOT(move()));
 }
 
-void ImageViewer::startAt(int rate, double speed, double acceleration)
+void ImageViewer::startAt(int rate, double speed, double acceleration, int x, int y)
 {
     mode = motion;
 
     timer.start(rate);
 
+    this->rate = rate;
+
+    this->time[0] = 0;
+    this->time[1] = 0;
+
     this->speed[0] = speed;
     this->speed[1] = speed;
     this->acceleration = acceleration;
 
-    this->pos[0] = QWidget::pos();
-    this->pos[1] = QWidget::pos();
+    this->pos[0] = QPoint(x != -1 ? x : QLabel::pos().x(), y != -1 ? y : QLabel::pos().y());
+    this->pos[1] = pos[0];
 }
 
-void ImageViewer::startFor(int rate, int time, double speed, double acceleration)
+void ImageViewer::startFor(int rate, int time, double speed, double acceleration, int x, int y)
 {
     mode = periodic;
 
     timer.start(rate);
+
+    this->rate = rate;
 
     this->time[0] = time;
     this->time[1] = time;
@@ -100,8 +107,8 @@ void ImageViewer::startFor(int rate, int time, double speed, double acceleration
     this->speed[1] = speed;
     this->acceleration = acceleration;
 
-    this->pos[0] = QWidget::pos();
-    this->pos[1] = QWidget::pos();
+    this->pos[0] = QPoint(x != -1 ? x : QLabel::pos().x(), y != -1 ? y : QLabel::pos().y());
+    this->pos[1] = pos[0];
 }
 
 void ImageViewer::move()
@@ -117,6 +124,14 @@ void ImageViewer::move()
             static_cast<QWidget *>(parent())->setAutoFillBackground(true);
             static_cast<QWidget *>(parent())->setPalette(pal);
 
+            for (QObject * p = parent(); p; p = p->parent())
+                if (QTabWidget * q = dynamic_cast<QTabWidget *>(p))
+                {
+                    emit done(q->currentIndex() + 1);
+
+                    break;
+                }
+
             return;
         }
         else
@@ -131,6 +146,16 @@ void ImageViewer::move()
 
         QLabel::move(pos[1].x(), pos[1].y());
     }
+    else
+    {
+        for (QObject * p = parent(); p; p = p->parent())
+            if (QTabWidget * q = dynamic_cast<QTabWidget *>(p))
+            {
+                emit done(q->currentIndex() + 1);
+
+                break;
+            }
+    }
 }
 
 void ImageViewer::reset()
@@ -142,11 +167,13 @@ void ImageViewer::reset()
     static_cast<QWidget *>(parent())->setAutoFillBackground(true);
     static_cast<QWidget *>(parent())->setPalette(pal);
 
-    pos[1] = pos[0];
-    time[1] = time[0];
-    speed[1] = speed[0];
-
     QLabel::move(pos[0].x(), pos[0].y());
+
+    switch (mode)
+    {
+    case motion: startAt(rate, speed[0], acceleration, pos[0].x(), pos[0].y()); break;
+    case periodic: startFor(rate, time[0], speed[0], acceleration, pos[0].x(), pos[0].y()); break;
+    }
 }
 
 bool ImageViewer::loadFile(const QString &fileName)

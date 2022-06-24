@@ -1,10 +1,12 @@
-QT += widgets
+QT += widgets webkit webkitwidgets multimedia multimediawidgets
 
 HEADERS       = analogclock.h \
-  imageviewer.h
+  imageviewer.h \
+  videoplayer.h
 SOURCES       = analogclock.cpp \
                 imageviewer.cpp \
-                main.cpp
+                main.cpp \
+                videoplayer.cpp
 
 QMAKE_PROJECT_NAME = ft_gem
 
@@ -12,7 +14,7 @@ FORMS += \
     mainwindow.ui
 
 DISTFILES += \
-  png/field.png \
-  png/missile.png \
-  png/ship.png \
-  png/ship2.png
+  png/ship.png
+
+RESOURCES += \
+  resource.qrc

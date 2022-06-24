@@ -1,6 +1,6 @@
 /****************************************************************************
 **
-** Copyright (C) 2016 The Qt Company Ltd.
+** Copyright (C) 2017 The Qt Company Ltd.
 ** Contact: https://www.qt.io/licensing/
 **
 ** This file is part of the examples of the Qt Toolkit.
@@ -48,89 +48,47 @@
 **
 ****************************************************************************/
 
-#ifndef IMAGEVIEWER_H
-#define IMAGEVIEWER_H
+#ifndef VIDEOPLAYER_H
+#define VIDEOPLAYER_H
 
-#define QT_NO_PRINTER
-
-#include <QLabel>
-#include <QTimer>
-#include <QImage>
-#include <QScrollArea>
-#ifndef QT_NO_PRINTER
-#include <QPrinter>
-#endif
+#include <QMediaPlayer>
+#include <QWidget>
 
 QT_BEGIN_NAMESPACE
-class QAction;
+class QAbstractButton;
+class QSlider;
 class QLabel;
-class QMenu;
-class QScrollArea;
-class QScrollBar;
+class QUrl;
 QT_END_NAMESPACE
 
-//! [0]
-class ImageViewer : public QLabel
+class VideoPlayer : public QWidget
 {
     Q_OBJECT
-
 public:
-    ImageViewer(QWidget * parent = nullptr);
-    bool loadFile(const QString &);
-    void startAt(int rate, double speed = 1.0, double acceleration = 0.0, int x = -1, int y = -1);
-    void startFor(int rate, int time, double speed = 1.0, double accceleration = 0.0, int x = -1, int y = -1);
+    VideoPlayer(QWidget *parent = nullptr);
+    ~VideoPlayer();
+
+    void setUrl(const QUrl &url);
 
 signals:
     void done(int);
 
 public slots:
-    void move();
-    void reset();
+    void openFile();
+    void play();
 
-    void open();
-    void saveAs();
-    void print();
-    void copy();
-    void paste();
-    void zoomIn();
-    void zoomOut();
-    void normalSize();
-    void fitToWindow();
-    void about();
+private slots:
+    void mediaStateChanged(QMediaPlayer::State state);
+    void positionChanged(qint64 position);
+    void durationChanged(qint64 duration);
+    void setPosition(int position);
+    void handleError();
 
 private:
-    void createActions();
-    void createMenus();
-    void updateActions();
-    bool saveFile(const QString &fileName);
-    void setImage(const QImage &newImage);
-    void scaleImage(double factor);
-    void adjustScrollBar(QScrollBar *scrollBar, double factor);
-
-    enum {periodic, motion} mode;
-    int rate;
-    int time[2];
-    double speed[2];
-    double acceleration;
-    QPoint pos[2];
-    QTimer timer;
-    QImage image;
-    QLabel *imageLabel;
-    QScrollArea *scrollArea;
-    double scaleFactor;
-
-#ifndef QT_NO_PRINTER
-    QPrinter printer;
-#endif
-
-    QAction *saveAsAct;
-    QAction *printAct;
-    QAction *copyAct;
-    QAction *zoomInAct;
-    QAction *zoomOutAct;
-    QAction *normalSizeAct;
-    QAction *fitToWindowAct;
+    QMediaPlayer* m_mediaPlayer;
+    QAbstractButton *m_playButton;
+    QSlider *m_positionSlider;
+    QLabel *m_errorLabel;
 };
-//! [0]
 
 #endif

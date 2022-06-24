@@ -50,7 +50,9 @@
 
 #include <QApplication>
 #include <QMainWindow>
+#include <QWebSettings>
 #include <QDesktopWidget>
+#include <QNetworkProxyFactory>
 
 #include "analogclock.h"
 #include "ui_mainwindow.h"
@@ -62,11 +64,12 @@ int main(int argc, char *argv[])
     Ui::MainWindow window;
 
     window.setupUi(& win);
-    window.ship_1->loadFile("png/ship.png");
-    window.ship_2->loadFile("png/ship.png");
-    window.ship_3->loadFile("png/ship2.png");
-    window.ship_4->loadFile("png/ship.png");
-    window.missile_3->loadFile("png/missile.png");
+    window.ship_1->loadFile(":/png/ship1.png");
+    window.ship_2->loadFile(":/png/ship1.png");
+    window.ship_3->loadFile(":/png/ship2.png");
+    window.ship_4->loadFile(":/png/ship1.png");
+    window.missile_3->loadFile(":/png/missile.png");
+    window.video_1->setUrl(QUrl("qrc:/avi/drive.avi"));
 
     QRect rec = QApplication::desktop()->screenGeometry();
     win.resize(rec.width(), rec.height());
@@ -76,8 +79,9 @@ int main(int argc, char *argv[])
     window.clock_2->startAt(1);
     window.ship_1->startAt(10);
     window.ship_2->startAt(1);
-    window.missile_3->startAt(100, -300.0, 45.0);
+    window.missile_3->startAt(100, -300.0, 35.0, rec.width(), 100);
     window.ship_4->startFor(1, rec.width() / 2);
+    window.video_1->play();
 
     return app.exec();
 }
