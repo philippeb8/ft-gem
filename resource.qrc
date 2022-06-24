@@ -8,5 +8,6 @@
         <file>mp4/drive.mp4</file>
         <file>png/tides.png</file>
         <file>png/dipoles.png</file>
+        <file>mp4/lorentz.mp4</file>
     </qresource>
 </RCC>

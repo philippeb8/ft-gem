@@ -323,6 +323,16 @@ p, li { white-space: pre-wrap; }
         </item>
        </layout>
       </widget>
+      <widget class="QWidget" name="tab_7">
+       <attribute name="title">
+        <string>GEM Lorentz Force</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_23">
+        <item>
+         <widget class="VideoPlayer" name="video_2" native="true"/>
+        </item>
+       </layout>
+      </widget>
       <widget class="QWidget" name="tab_2">
        <attribute name="title">
         <string>Force Field</string>
@@ -875,6 +885,9 @@ p, li { white-space: pre-wrap; }
           <layout class="QHBoxLayout" name="horizontalLayout_10">
            <item>
             <widget class="QTextBrowser" name="textBrowser">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
                <horstretch>0</horstretch>
@@ -2791,7 +2804,7 @@ p, li { white-space: pre-wrap; }
     </hint>
     <hint type="destinationlabel">
      <x>769</x>
-     <y>273</y>
+     <y>263</y>
     </hint>
    </hints>
   </connection>
@@ -2807,7 +2820,7 @@ p, li { white-space: pre-wrap; }
     </hint>
     <hint type="destinationlabel">
      <x>144</x>
-     <y>303</y>
+     <y>293</y>
     </hint>
    </hints>
   </connection>
@@ -2888,6 +2901,22 @@ p, li { white-space: pre-wrap; }
     <hint type="destinationlabel">
      <x>89</x>
      <y>151</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tabWidget</sender>
+   <signal>currentChanged(int)</signal>
+   <receiver>video_2</receiver>
+   <slot>play()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>307</x>
+     <y>52</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>259</x>
+     <y>129</y>
     </hint>
    </hints>
   </connection>
