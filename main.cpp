@@ -79,8 +79,8 @@ int main(int argc, char *argv[])
 
     window.clock_1->startAt(100);
     window.clock_2->startAt(1);
-    window.ship_1->startAt(100);
-    window.ship_2->startAt(1, 1.0, 0.0, -1, -1, Qt::darkBlue);
+    window.ship_1->startAt(100, 2.0);
+    window.ship_2->startAt(1, 2.0, 0.0, -1, -1, Qt::darkBlue);
     window.missile_3->startAt(100, -300.0, 40.0, rec.width(), 100);
     window.ship_4->startFor(1, rec.width() / 2);
     window.video_1->play();
