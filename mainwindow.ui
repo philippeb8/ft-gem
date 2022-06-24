@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>623</height>
+    <height>613</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -24,7 +24,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab_4">
        <attribute name="title">
@@ -38,131 +38,284 @@
       </widget>
       <widget class="QWidget" name="tab_5">
        <attribute name="title">
-        <string>Theory</string>
+        <string>Relativity</string>
        </attribute>
-       <layout class="QHBoxLayout" name="horizontalLayout_17">
+       <layout class="QVBoxLayout" name="verticalLayout_5">
         <item>
-         <widget class="QTableWidget" name="tableWidget">
-          <row>
-           <property name="text">
-            <string>Electric</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>Magnetic</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>Gravitoelectric</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>Gravitomagnetic</string>
-           </property>
-          </row>
-          <column>
-           <property name="text">
-            <string>Hertz</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Speed</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Type</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Pole</string>
-           </property>
-          </column>
-          <item row="0" column="0">
-           <property name="text">
-            <string>1/s</string>
-           </property>
-          </item>
-          <item row="0" column="1">
-           <property name="text">
-            <string>m/s</string>
-           </property>
-          </item>
-          <item row="0" column="2">
-           <property name="text">
-            <string>± kg/C</string>
-           </property>
-          </item>
-          <item row="0" column="3">
-           <property name="text">
-            <string>Dipole</string>
-           </property>
-          </item>
-          <item row="1" column="0">
-           <property name="text">
-            <string>1/s</string>
-           </property>
-          </item>
-          <item row="1" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="1" column="2">
-           <property name="text">
-            <string>± kg/C</string>
-           </property>
-          </item>
-          <item row="1" column="3">
-           <property name="text">
-            <string>Dipole</string>
-           </property>
-          </item>
-          <item row="2" column="0">
-           <property name="text">
-            <string>1/s</string>
-           </property>
-          </item>
-          <item row="2" column="1">
-           <property name="text">
-            <string>m/s</string>
-           </property>
-          </item>
-          <item row="2" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="2" column="3">
-           <property name="text">
-            <string>Monopole</string>
-           </property>
-          </item>
-          <item row="3" column="0">
-           <property name="text">
-            <string>1/s</string>
-           </property>
-          </item>
-          <item row="3" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="3" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="3" column="3">
-           <property name="text">
-            <string>Monopole</string>
-           </property>
-          </item>
+         <widget class="QGroupBox" name="groupBox_2">
+          <property name="title">
+           <string>Gravitational Redshift is mutually Exclusive with Locality</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_18">
+           <item>
+            <widget class="QPlainTextEdit" name="plainTextEdit">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="plainText">
+              <string>Scenario:
+- If you have 1 laser gun emitting a laser of wavelength X on the surface of the Earth
+
+Question:
+- Will the same laser gun emit a laser of wavelength X on the ISS?
+
+Answer:
+- If yes then gravitational redshift is wrong, if no then locality is wrong thus the gravitational redshift is mutually exclusive with locality.</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_3">
+          <property name="title">
+           <string>Black Holes are Aggregates, refuting Wormholes and Singularities</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_19">
+           <item>
+            <widget class="QPlainTextEdit" name="plainTextEdit_2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="plainText">
+              <string>https://www.popularmechanics.com/space/deep-space/a36970402/hawkings-area-theorem-black-holes/</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_4">
+          <property name="title">
+           <string>Definition of the Position of a White Hole</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_20">
+           <item>
+            <widget class="QPlainTextEdit" name="plainTextEdit_3">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="plainText">
+              <string>N/A</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_6">
+          <property name="title">
+           <string>Gravity Probe B</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_22">
+           <item>
+            <widget class="QPlainTextEdit" name="plainTextEdit_4">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="plainText">
+              <string>How can we perform 2 superimposed measurements with 1 gyroscope?</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_6">
+       <attribute name="title">
+        <string>Finite Theory</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="QGroupBox" name="groupBox_5">
+          <property name="title">
+           <string>Measurement Units</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_21">
+           <item>
+            <widget class="QTableWidget" name="tableWidget_2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <row>
+              <property name="text">
+               <string>Electric</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Magnetic</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Gravitoelectric</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Gravitomagnetic</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Hertz</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Speed</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Type</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Pole</string>
+              </property>
+             </column>
+             <item row="0" column="0">
+              <property name="text">
+               <string>1/s</string>
+              </property>
+             </item>
+             <item row="0" column="1">
+              <property name="text">
+               <string>m/s</string>
+              </property>
+             </item>
+             <item row="0" column="2">
+              <property name="text">
+               <string>± kg/C</string>
+              </property>
+             </item>
+             <item row="0" column="3">
+              <property name="text">
+               <string>Dipole</string>
+              </property>
+             </item>
+             <item row="1" column="0">
+              <property name="text">
+               <string>1/s</string>
+              </property>
+             </item>
+             <item row="1" column="1">
+              <property name="text">
+               <string/>
+              </property>
+             </item>
+             <item row="1" column="2">
+              <property name="text">
+               <string>± kg/C</string>
+              </property>
+             </item>
+             <item row="1" column="3">
+              <property name="text">
+               <string>Dipole</string>
+              </property>
+             </item>
+             <item row="2" column="0">
+              <property name="text">
+               <string>1/s</string>
+              </property>
+             </item>
+             <item row="2" column="1">
+              <property name="text">
+               <string>m/s</string>
+              </property>
+             </item>
+             <item row="2" column="2">
+              <property name="text">
+               <string/>
+              </property>
+             </item>
+             <item row="2" column="3">
+              <property name="text">
+               <string>Monopole</string>
+              </property>
+             </item>
+             <item row="3" column="0">
+              <property name="text">
+               <string>1/s</string>
+              </property>
+             </item>
+             <item row="3" column="1">
+              <property name="text">
+               <string/>
+              </property>
+             </item>
+             <item row="3" column="2">
+              <property name="text">
+               <string/>
+              </property>
+             </item>
+             <item row="3" column="3">
+              <property name="text">
+               <string>Monopole</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox">
+          <property name="title">
+           <string>Earth's Tides</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_17">
+           <item>
+            <widget class="QTextBrowser" name="textBrowser_4">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="html">
+              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Noto Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:16px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji'; font-size:16px; color:#24292f; background-color:#ffffff;&quot;&gt;Residual of the Earth's tides is showing consistent &amp;quot;aether wind&amp;quot; (when the gravimeter is perpendicular to the Sun) or a superimposed comoving gravitational framework.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="ImageViewer" name="tides_1" native="true">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </widget>
         </item>
        </layout>
