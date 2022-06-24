@@ -77,8 +77,8 @@ class ImageViewer : public QLabel
 public:
     ImageViewer(QWidget * parent = nullptr);
     bool loadFile(const QString &);
-    void startAt(int rate, double speed = 1.0, double acceleration = 0.0, int x = -1, int y = -1);
-    void startFor(int rate, int time, double speed = 1.0, double accceleration = 0.0, int x = -1, int y = -1);
+    void startAt(int rate, double speed = 1.0, double acceleration = 0.0, int x = -1, int y = -1, QColor col = Qt::black);
+    void startFor(int rate, int time, double speed = 1.0, double accceleration = 0.0, int x = -1, int y = -1, QColor col = Qt::black);
 
 signals:
     void done(int);
@@ -112,6 +112,7 @@ private:
     int time[2];
     double speed[2];
     double acceleration;
+    QColor col;
     QPoint pos[2];
     QTimer timer;
     QImage image;

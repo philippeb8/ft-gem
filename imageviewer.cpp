@@ -73,7 +73,7 @@ ImageViewer::ImageViewer(QWidget * parent)
     connect(& timer, SIGNAL(timeout()), this, SLOT(move()));
 }
 
-void ImageViewer::startAt(int rate, double speed, double acceleration, int x, int y)
+void ImageViewer::startAt(int rate, double speed, double acceleration, int x, int y, QColor col)
 {
     mode = motion;
 
@@ -90,9 +90,18 @@ void ImageViewer::startAt(int rate, double speed, double acceleration, int x, in
 
     this->pos[0] = QPoint(x != -1 ? x : QLabel::pos().x(), y != -1 ? y : QLabel::pos().y());
     this->pos[1] = pos[0];
+
+    this->col = col;
+
+    QPalette pal = QPalette();
+
+    pal.setColor(QPalette::Window, col);
+
+    static_cast<QWidget *>(parent())->setAutoFillBackground(true);
+    static_cast<QWidget *>(parent())->setPalette(pal);
 }
 
-void ImageViewer::startFor(int rate, int time, double speed, double acceleration, int x, int y)
+void ImageViewer::startFor(int rate, int time, double speed, double acceleration, int x, int y, QColor col)
 {
     mode = periodic;
 
@@ -109,6 +118,15 @@ void ImageViewer::startFor(int rate, int time, double speed, double acceleration
 
     this->pos[0] = QPoint(x != -1 ? x : QLabel::pos().x(), y != -1 ? y : QLabel::pos().y());
     this->pos[1] = pos[0];
+
+    this->col = col;
+
+    QPalette pal = QPalette();
+
+    pal.setColor(QPalette::Window, col);
+
+    static_cast<QWidget *>(parent())->setAutoFillBackground(true);
+    static_cast<QWidget *>(parent())->setPalette(pal);
 }
 
 void ImageViewer::move()
@@ -160,19 +178,12 @@ void ImageViewer::move()
 
 void ImageViewer::reset()
 {
-    QPalette pal = QPalette();
-
-    pal.setColor(QPalette::Window, Qt::black);
-
-    static_cast<QWidget *>(parent())->setAutoFillBackground(true);
-    static_cast<QWidget *>(parent())->setPalette(pal);
-
     QLabel::move(pos[0].x(), pos[0].y());
 
     switch (mode)
     {
-    case motion: startAt(rate, speed[0], acceleration, pos[0].x(), pos[0].y()); break;
-    case periodic: startFor(rate, time[0], speed[0], acceleration, pos[0].x(), pos[0].y()); break;
+    case motion: startAt(rate, speed[0], acceleration, pos[0].x(), pos[0].y(), col); break;
+    case periodic: startFor(rate, time[0], speed[0], acceleration, pos[0].x(), pos[0].y(), col); break;
     }
 }
 
