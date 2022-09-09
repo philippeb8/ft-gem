@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
     window.ship_4->loadFile(":/png/ship1.png");
     window.missile_3->loadFile(":/png/missile.png");
     window.video_1->setUrl(QUrl("qrc:/mp4/drive.mp4"));
-    window.video_2->setUrl(QUrl("qrc:/mp4/lorentz.mp4"));
+    //window.video_2->setUrl(QUrl("qrc:/mp4/lorentz.mp4"));
     window.tides_1->loadFile(":/png/tides.png");
     window.dipole_1->loadFile(":/png/dipoles.png");
     window.video_3->setUrl(QUrl("qrc:/mp4/fits.mp4"));

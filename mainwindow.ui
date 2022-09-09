@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>697</height>
+    <width>1122</width>
+    <height>582</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -24,10 +24,10 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="tabPosition">
-       <enum>QTabWidget::West</enum>
+       <enum>QTabWidget::South</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab_4">
        <attribute name="title">
@@ -45,117 +45,58 @@
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_5">
         <item>
-         <widget class="QGroupBox" name="groupBox_2">
-          <property name="title">
-           <string>Gravitational Redshift is mutually Exclusive with Locality</string>
+         <widget class="QTabWidget" name="tabWidget_2">
+          <property name="tabPosition">
+           <enum>QTabWidget::West</enum>
           </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_18">
-           <item>
-            <widget class="QPlainTextEdit" name="plainTextEdit">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="plainText">
-              <string>Question:
-- If you have 1 laser gun emitting a laser of wavelength X on the surface of the Earth, will the same laser gun emit a laser of wavelength X on the ISS as measured by an onboard technician?
-
-Answer:
-- If yes then gravitational redshift is wrong, if no then locality is wrong thus the gravitational redshift is mutually exclusive with locality.</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item>
-         <widget class="QGroupBox" name="groupBox_3">
-          <property name="title">
-           <string>Black Holes are Aggregates, refuting Wormholes and Singularities</string>
+          <property name="currentIndex">
+           <number>0</number>
           </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_19">
-           <item>
-            <widget class="QPlainTextEdit" name="plainTextEdit_2">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="plainText">
-              <string>https://www.popularmechanics.com/space/deep-space/a36970402/hawkings-area-theorem-black-holes/</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item>
-         <widget class="QGroupBox" name="groupBox_4">
-          <property name="title">
-           <string>Definition of the Position of a White Hole</string>
-          </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_20">
-           <item>
-            <widget class="QPlainTextEdit" name="plainTextEdit_3">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="plainText">
-              <string>N/A</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item>
-         <widget class="QGroupBox" name="groupBox_6">
-          <property name="title">
-           <string>Gravity Probe B</string>
-          </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_22">
-           <item>
-            <widget class="QPlainTextEdit" name="plainTextEdit_4">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="plainText">
-              <string>How can we perform 2 superimposed measurements with 1 gyroscope?</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item>
-         <widget class="QGroupBox" name="groupBox_7">
-          <property name="title">
-           <string>Light Bending</string>
-          </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_25">
-           <item>
-            <widget class="QPlainTextEdit" name="plainTextEdit_6">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="plainText">
-              <string>It was impossible to predict the light bending without knowing the perihelion precession first.</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
+          <widget class="QWidget" name="tab_14">
+           <attribute name="title">
+            <string>Light Bending</string>
+           </attribute>
+           <layout class="QHBoxLayout" name="horizontalLayout_18">
+            <item>
+             <widget class="Canvas" name="widget_6" native="true"/>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_15">
+           <attribute name="title">
+            <string>Gravitational Redshift</string>
+           </attribute>
+           <layout class="QHBoxLayout" name="horizontalLayout_21">
+            <item>
+             <widget class="QWidget" name="widget_5" native="true"/>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_16">
+           <attribute name="title">
+            <string>Black Holes</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_8">
+            <item>
+             <widget class="QGroupBox" name="groupBox_3">
+              <property name="title">
+               <string>Black Holes are Aggregates, Refuting Wormholes and Singularities</string>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_19">
+               <item>
+                <widget class="QWebView" name="webView_1">
+                 <property name="url">
+                  <url>
+                   <string>about:blank</string>
+                  </url>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
          </widget>
         </item>
        </layout>
@@ -166,188 +107,199 @@ Answer:
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_4">
         <item>
-         <widget class="QGroupBox" name="groupBox_5">
-          <property name="title">
-           <string>Measurement Units</string>
+         <widget class="QTabWidget" name="tabWidget_3">
+          <property name="tabPosition">
+           <enum>QTabWidget::West</enum>
           </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_21">
-           <item>
-            <widget class="QTableWidget" name="tableWidget_2">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <row>
-              <property name="text">
-               <string>Electric</string>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>Magnetic</string>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>Gravitoelectric</string>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>Gravitomagnetic</string>
-              </property>
-             </row>
-             <column>
-              <property name="text">
-               <string>Hertz</string>
-              </property>
-             </column>
-             <column>
-              <property name="text">
-               <string>Speed</string>
-              </property>
-             </column>
-             <column>
-              <property name="text">
-               <string>Type</string>
-              </property>
-             </column>
-             <column>
-              <property name="text">
-               <string>Pole</string>
-              </property>
-             </column>
-             <item row="0" column="0">
-              <property name="text">
-               <string>1/s</string>
-              </property>
-             </item>
-             <item row="0" column="1">
-              <property name="text">
-               <string>m/s</string>
-              </property>
-             </item>
-             <item row="0" column="2">
-              <property name="text">
-               <string>± kg/C</string>
-              </property>
-             </item>
-             <item row="0" column="3">
-              <property name="text">
-               <string>Dipole</string>
-              </property>
-             </item>
-             <item row="1" column="0">
-              <property name="text">
-               <string>1/s</string>
-              </property>
-             </item>
-             <item row="1" column="1">
-              <property name="text">
-               <string/>
-              </property>
-             </item>
-             <item row="1" column="2">
-              <property name="text">
-               <string>± kg/C</string>
-              </property>
-             </item>
-             <item row="1" column="3">
-              <property name="text">
-               <string>Dipole</string>
-              </property>
-             </item>
-             <item row="2" column="0">
-              <property name="text">
-               <string>1/s</string>
-              </property>
-             </item>
-             <item row="2" column="1">
-              <property name="text">
-               <string>m/s</string>
-              </property>
-             </item>
-             <item row="2" column="2">
-              <property name="text">
-               <string/>
-              </property>
-             </item>
-             <item row="2" column="3">
-              <property name="text">
-               <string>Monopole</string>
-              </property>
-             </item>
-             <item row="3" column="0">
-              <property name="text">
-               <string>1/s</string>
-              </property>
-             </item>
-             <item row="3" column="1">
-              <property name="text">
-               <string/>
-              </property>
-             </item>
-             <item row="3" column="2">
-              <property name="text">
-               <string/>
-              </property>
-             </item>
-             <item row="3" column="3">
-              <property name="text">
-               <string>Monopole</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item>
-            <widget class="ImageViewer" name="dipole_1" native="true"/>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item>
-         <widget class="QGroupBox" name="groupBox">
-          <property name="title">
-           <string>Earth's Tides</string>
+          <property name="currentIndex">
+           <number>0</number>
           </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_17">
-           <item>
-            <widget class="QPlainTextEdit" name="plainTextEdit_5">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="plainText">
-              <string>Residual of the Earth's tides is showing consistent &quot;aether wind&quot; (when the gravimeter is perpendicular to the Sun) or a superimposed comoving gravitational framework.</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="ImageViewer" name="tides_1" native="true">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-            </widget>
-           </item>
-          </layout>
+          <widget class="QWidget" name="tab_9">
+           <attribute name="title">
+            <string>Measurement Units</string>
+           </attribute>
+           <layout class="QHBoxLayout" name="horizontalLayout_20">
+            <item>
+             <widget class="QTableWidget" name="tableWidget_2">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <row>
+               <property name="text">
+                <string>Electric</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>Magnetic</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>Gravitoelectric</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>Gravitomagnetic</string>
+               </property>
+              </row>
+              <column>
+               <property name="text">
+                <string>Hertz</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Acceleration</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Type</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Pole</string>
+               </property>
+              </column>
+              <item row="0" column="0">
+               <property name="text">
+                <string/>
+               </property>
+              </item>
+              <item row="0" column="1">
+               <property name="text">
+                <string>m/s^2</string>
+               </property>
+              </item>
+              <item row="0" column="2">
+               <property name="text">
+                <string>± kg/C</string>
+               </property>
+              </item>
+              <item row="0" column="3">
+               <property name="text">
+                <string>Dipole</string>
+               </property>
+              </item>
+              <item row="1" column="0">
+               <property name="text">
+                <string>1/s</string>
+               </property>
+              </item>
+              <item row="1" column="1">
+               <property name="text">
+                <string/>
+               </property>
+              </item>
+              <item row="1" column="2">
+               <property name="text">
+                <string>± kg/C</string>
+               </property>
+              </item>
+              <item row="1" column="3">
+               <property name="text">
+                <string>Dipole</string>
+               </property>
+              </item>
+              <item row="2" column="0">
+               <property name="text">
+                <string/>
+               </property>
+              </item>
+              <item row="2" column="1">
+               <property name="text">
+                <string>m/s^2</string>
+               </property>
+              </item>
+              <item row="2" column="2">
+               <property name="text">
+                <string/>
+               </property>
+              </item>
+              <item row="2" column="3">
+               <property name="text">
+                <string>Monopole</string>
+               </property>
+              </item>
+              <item row="3" column="0">
+               <property name="text">
+                <string>1/s</string>
+               </property>
+              </item>
+              <item row="3" column="1">
+               <property name="text">
+                <string/>
+               </property>
+              </item>
+              <item row="3" column="2">
+               <property name="text">
+                <string/>
+               </property>
+              </item>
+              <item row="3" column="3">
+               <property name="text">
+                <string>Monopole</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <widget class="ImageViewer" name="dipole_1" native="true"/>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_10">
+           <attribute name="title">
+            <string>Earth's Tides</string>
+           </attribute>
+           <layout class="QHBoxLayout" name="horizontalLayout_17">
+            <item>
+             <widget class="QPlainTextEdit" name="plainTextEdit_5">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="plainText">
+               <string>Residual of the Earth's tides is showing consistent &quot;aether wind&quot; (when the gravimeter is perpendicular to the Sun) or a superimposed comoving gravitational framework.</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="ImageViewer" name="tides_1" native="true">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_17">
+           <attribute name="title">
+            <string>Rotation Curve</string>
+           </attribute>
+          </widget>
+          <widget class="QWidget" name="tab_18">
+           <attribute name="title">
+            <string>Hubble's Law</string>
+           </attribute>
+          </widget>
+          <widget class="QWidget" name="tab_19">
+           <attribute name="title">
+            <string>Inflation</string>
+           </attribute>
+          </widget>
          </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tab_7">
-       <attribute name="title">
-        <string>GEM Lorentz Force</string>
-       </attribute>
-       <layout class="QHBoxLayout" name="horizontalLayout_23">
-        <item>
-         <widget class="VideoPlayer" name="video_2" native="true"/>
         </item>
        </layout>
       </widget>
@@ -1390,14 +1342,19 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
-     <height>34</height>
+     <width>1122</width>
+     <height>30</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>QWebView</class>
+   <extends>QWidget</extends>
+   <header location="global">QtWebKitWidgets/QWebView</header>
+  </customwidget>
   <customwidget>
    <class>AnalogClock</class>
    <extends>QWidget</extends>
@@ -1427,86 +1384,31 @@ p, li { white-space: pre-wrap; }
     <slot>play()</slot>
    </slots>
   </customwidget>
+  <customwidget>
+   <class>Canvas</class>
+   <extends>QWidget</extends>
+   <header location="global">canvas.h</header>
+   <container>1</container>
+   <slots>
+    <slot>reset()</slot>
+   </slots>
+  </customwidget>
  </customwidgets>
  <resources/>
  <connections>
   <connection>
-   <sender>pushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>clock_1</receiver>
-   <slot>reset()</slot>
+   <sender>tabWidget</sender>
+   <signal>currentChanged(int)</signal>
+   <receiver>video_3</receiver>
+   <slot>play()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>397</x>
-     <y>555</y>
+     <x>381</x>
+     <y>54</y>
     </hint>
     <hint type="destinationlabel">
-     <x>237</x>
-     <y>195</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>clock_2</receiver>
-   <slot>reset()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>431</x>
-     <y>551</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>160</x>
-     <y>286</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>ship_1</receiver>
-   <slot>reset()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>390</x>
-     <y>567</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>369</x>
-     <y>195</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>ship_2</receiver>
-   <slot>reset()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>397</x>
-     <y>568</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>336</x>
-     <y>358</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_2</sender>
-   <signal>clicked()</signal>
-   <receiver>missile_3</receiver>
-   <slot>reset()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>404</x>
-     <y>556</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>769</x>
-     <y>263</y>
+     <x>375</x>
+     <y>140</y>
     </hint>
    </hints>
   </connection>
@@ -1517,12 +1419,44 @@ p, li { white-space: pre-wrap; }
    <slot>reset()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>396</x>
-     <y>561</y>
+     <x>602</x>
+     <y>514</y>
     </hint>
     <hint type="destinationlabel">
-     <x>144</x>
-     <y>293</y>
+     <x>168</x>
+     <y>245</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>clock_1</receiver>
+   <slot>reset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>602</x>
+     <y>514</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>285</x>
+     <y>193</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>clock_2</receiver>
+   <slot>reset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>602</x>
+     <y>514</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>160</x>
+     <y>286</y>
     </hint>
    </hints>
   </connection>
@@ -1533,60 +1467,28 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>141</x>
-     <y>560</y>
+     <x>225</x>
+     <y>552</y>
     </hint>
     <hint type="destinationlabel">
-     <x>377</x>
-     <y>561</y>
+     <x>602</x>
+     <y>514</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>tabWidget</sender>
-   <signal>currentChanged(int)</signal>
-   <receiver>pushButton_3</receiver>
-   <slot>click()</slot>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ship_1</receiver>
+   <slot>reset()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>284</x>
-     <y>566</y>
+     <x>602</x>
+     <y>514</y>
     </hint>
     <hint type="destinationlabel">
-     <x>370</x>
-     <y>563</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>tabWidget</sender>
-   <signal>currentChanged(int)</signal>
-   <receiver>pushButton</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>133</x>
-     <y>558</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>394</x>
-     <y>560</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>tabWidget</sender>
-   <signal>currentChanged(int)</signal>
-   <receiver>pushButton_2</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>219</x>
-     <y>560</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>423</x>
-     <y>561</y>
+     <x>489</x>
+     <y>187</y>
     </hint>
    </hints>
   </connection>
@@ -1607,34 +1509,98 @@ p, li { white-space: pre-wrap; }
    </hints>
   </connection>
   <connection>
-   <sender>tabWidget</sender>
-   <signal>currentChanged(int)</signal>
-   <receiver>video_2</receiver>
-   <slot>play()</slot>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>missile_3</receiver>
+   <slot>reset()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>307</x>
-     <y>52</y>
+     <x>602</x>
+     <y>514</y>
     </hint>
     <hint type="destinationlabel">
-     <x>259</x>
-     <y>129</y>
+     <x>1091</x>
+     <y>213</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ship_2</receiver>
+   <slot>reset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>602</x>
+     <y>514</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>489</x>
+     <y>349</y>
     </hint>
    </hints>
   </connection>
   <connection>
    <sender>tabWidget</sender>
    <signal>currentChanged(int)</signal>
-   <receiver>video_3</receiver>
-   <slot>play()</slot>
+   <receiver>pushButton</receiver>
+   <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>381</x>
-     <y>54</y>
+     <x>139</x>
+     <y>552</y>
     </hint>
     <hint type="destinationlabel">
-     <x>375</x>
-     <y>140</y>
+     <x>602</x>
+     <y>514</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tabWidget</sender>
+   <signal>currentChanged(int)</signal>
+   <receiver>pushButton_3</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>290</x>
+     <y>552</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>602</x>
+     <y>514</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tabWidget</sender>
+   <signal>currentChanged(int)</signal>
+   <receiver>pushButton_2</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>147</x>
+     <y>552</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>602</x>
+     <y>514</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tabWidget_2</sender>
+   <signal>currentChanged(int)</signal>
+   <receiver>widget_6</receiver>
+   <slot>reset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>35</x>
+     <y>96</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>192</x>
+     <y>175</y>
     </hint>
    </hints>
   </connection>
