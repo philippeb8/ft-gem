@@ -78,6 +78,8 @@ int main(int argc, char *argv[])
     win.resize(rec.width(), rec.height());
     win.show();
 
+    window.widget_6->setFramework("General Relativity");
+
     window.clock_1->startAt(100);
     window.clock_2->startAt(1);
     window.ship_1->startAt(100, 4.0);

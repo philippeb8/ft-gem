@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1122</width>
-    <height>582</height>
+    <width>1165</width>
+    <height>757</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -27,7 +27,7 @@
        <enum>QTabWidget::South</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tab_4">
        <attribute name="title">
@@ -112,7 +112,7 @@
            <enum>QTabWidget::West</enum>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="tab_9">
            <attribute name="title">
@@ -281,6 +281,16 @@
                </sizepolicy>
               </property>
              </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_7">
+           <attribute name="title">
+            <string>Light Bending</string>
+           </attribute>
+           <layout class="QHBoxLayout" name="horizontalLayout_22">
+            <item>
+             <widget class="Canvas" name="widget_7" native="true"/>
             </item>
            </layout>
           </widget>
@@ -1342,7 +1352,7 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1122</width>
+     <width>1165</width>
      <height>30</height>
     </rect>
    </property>
@@ -1419,12 +1429,12 @@ p, li { white-space: pre-wrap; }
    <slot>reset()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>602</x>
-     <y>514</y>
+     <x>624</x>
+     <y>689</y>
     </hint>
     <hint type="destinationlabel">
      <x>168</x>
-     <y>245</y>
+     <y>385</y>
     </hint>
    </hints>
   </connection>
@@ -1435,8 +1445,8 @@ p, li { white-space: pre-wrap; }
    <slot>reset()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>602</x>
-     <y>514</y>
+     <x>624</x>
+     <y>689</y>
     </hint>
     <hint type="destinationlabel">
      <x>285</x>
@@ -1451,8 +1461,8 @@ p, li { white-space: pre-wrap; }
    <slot>reset()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>602</x>
-     <y>514</y>
+     <x>624</x>
+     <y>689</y>
     </hint>
     <hint type="destinationlabel">
      <x>160</x>
@@ -1471,8 +1481,8 @@ p, li { white-space: pre-wrap; }
      <y>552</y>
     </hint>
     <hint type="destinationlabel">
-     <x>602</x>
-     <y>514</y>
+     <x>624</x>
+     <y>689</y>
     </hint>
    </hints>
   </connection>
@@ -1483,8 +1493,8 @@ p, li { white-space: pre-wrap; }
    <slot>reset()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>602</x>
-     <y>514</y>
+     <x>624</x>
+     <y>689</y>
     </hint>
     <hint type="destinationlabel">
      <x>489</x>
@@ -1515,12 +1525,12 @@ p, li { white-space: pre-wrap; }
    <slot>reset()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>602</x>
-     <y>514</y>
+     <x>624</x>
+     <y>689</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1091</x>
-     <y>213</y>
+     <x>1134</x>
+     <y>370</y>
     </hint>
    </hints>
   </connection>
@@ -1531,8 +1541,8 @@ p, li { white-space: pre-wrap; }
    <slot>reset()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>602</x>
-     <y>514</y>
+     <x>624</x>
+     <y>689</y>
     </hint>
     <hint type="destinationlabel">
      <x>489</x>
@@ -1551,8 +1561,8 @@ p, li { white-space: pre-wrap; }
      <y>552</y>
     </hint>
     <hint type="destinationlabel">
-     <x>602</x>
-     <y>514</y>
+     <x>624</x>
+     <y>689</y>
     </hint>
    </hints>
   </connection>
@@ -1567,8 +1577,8 @@ p, li { white-space: pre-wrap; }
      <y>552</y>
     </hint>
     <hint type="destinationlabel">
-     <x>602</x>
-     <y>514</y>
+     <x>624</x>
+     <y>689</y>
     </hint>
    </hints>
   </connection>
@@ -1583,8 +1593,8 @@ p, li { white-space: pre-wrap; }
      <y>552</y>
     </hint>
     <hint type="destinationlabel">
-     <x>602</x>
-     <y>514</y>
+     <x>624</x>
+     <y>689</y>
     </hint>
    </hints>
   </connection>
@@ -1601,6 +1611,22 @@ p, li { white-space: pre-wrap; }
     <hint type="destinationlabel">
      <x>192</x>
      <y>175</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tabWidget_3</sender>
+   <signal>currentChanged(int)</signal>
+   <receiver>widget_7</receiver>
+   <slot>reset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>32</x>
+     <y>325</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>169</x>
+     <y>305</y>
     </hint>
    </hints>
   </connection>

@@ -52,7 +52,7 @@ typedef long double real;
 
 const real C = 299792458.L;
 const real G = 6.67428e-11L;
-const real H[] = {C*C/(G), 0., 1e20};
+const real H[] = {C*C/(G) / 2e7, 0., 1e20}; // demo purpuses only
 
 struct vector3
 {
@@ -275,6 +275,9 @@ public:
     enum Type {PP, LB, BB, GR, V1} eType;
 
     Canvas( QWidget *parent, Type eType = LB, real scale = 8e8L );
+
+    void setFramework(QString const & f);
+
     ~Canvas();
 	
 protected slots:
@@ -290,6 +293,7 @@ protected:
     void paintEvent( QPaintEvent *e );
 	void timerEvent( QTimerEvent *e );
 
+    QString framework = "Finite Theory";
     QPen pen;
     QPolygon polyline;
 

@@ -65,6 +65,7 @@
 #include <QtGui/QPainter>
 #include <QtWidgets/QDesktopWidget>
 #include <QtCore/QProcess>
+#include <QDebug>
 
 using namespace std;
 
@@ -75,7 +76,7 @@ const real upper = 0.1L;
 // observer is infinitly far away
 real Planet::FR1(real m, real d, real h)
 {
-    return (h) / (m / d + h) / 2.L;
+    return (h) / (m / d + h);
 }
 
 // observer is in a null environment
@@ -170,7 +171,7 @@ inline void Planet::operator () (const vector<Planet> &planet, const real & uppe
     p += v[0] * t[0] + va * t[0] * t[0] / 2.;
 
     // v = v + a*t
-    v[0] += va /** t[0]*/;
+    v[0] += va * upper;
 	
     switch (eType)
 	{
@@ -442,30 +443,56 @@ void Canvas::timerEvent(QTimerEvent *)
         break;
     }
 
+    QRect b;
+
     for (size_t i = 1; i < planet[0].size(); ++ i)
     {
         for (size_t j = 0; j < planet.size(); ++ j)
 		{
+            QString t = QString(planet[j][i].f == & Planet::NW ? "Newton" : framework) + "_";
+            QFont f = QPainter().font();
+            f.setPointSize(30);
+            QFontMetrics m(f);
+            QRect s = m.boundingRect(t);
+
+            b |= s;
+        }
+    }
+
+    int y = 40;
+
+    for (size_t i = 1; i < planet[0].size(); ++ i)
+    {
+        for (size_t j = 0; j < planet.size(); ++ j)
+        {
             QRect e(planet[j][i].o[0] / scale - 2 + width()/2, planet[j][i].o[1] / scale - 2 + height()/2, 4+1, 4+1);
 
-			planet[j][i].o[0] = planet[j][i].p[0];
-			planet[j][i].o[1] = planet[j][i].p[1];
-			planet[j][i].o[2] = planet[j][i].p[2];
-			
-			QRect r(planet[j][i].o[0] / scale - 2 + width()/2, planet[j][i].o[1] / scale - 2 + height()/2, 4, 4);
-            QPainter painter;
-			painter.begin( &buffer );
-            painter.setPen(QPen(planet[j][i].c, 8));
-            //painter.setBrush(planet[j][i].c);
-            //painter.eraseRect(e);
-            painter.drawLine(e.x(), e.y(), r.x(), r.y());
-            painter.end();
-			r |= e;
-			bitBlt( this, r.x(), r.y(), &buffer, r.x(), r.y(), r.width(), r.height() );
+            planet[j][i].o[0] = planet[j][i].p[0];
+            planet[j][i].o[1] = planet[j][i].p[1];
+            planet[j][i].o[2] = planet[j][i].p[2];
 
-			update(r);
-		}
+            QRect r(planet[j][i].o[0] / scale - 2 + width()/2, planet[j][i].o[1] / scale - 2 + height()/2, 4, 4);
+            QPainter painter;
+            painter.begin( &buffer );
+            painter.setPen(QPen(planet[j][i].c, 8));
+            painter.drawLine(e.x(), e.y(), r.x(), r.y());
+
+            QString t = QString(planet[j][i].f == & Planet::NW ? "Newton" : framework);
+            QFont f = painter.font();
+            f.setPointSize(30);
+            QFontMetrics m(f);
+            QRect s = m.boundingRect(t);
+            painter.setFont(f);
+            painter.setPen(QPen(planet[j][i].c, 2));
+            painter.drawText(width() - b.width(), y, t);
+
+            y += s.height();
+
+            painter.end();
+        }
     }
+
+    repaint();
 }
 
 void Canvas::reset()
@@ -486,8 +513,8 @@ void Canvas::reset()
         {1788083649521.39L, 4079380837677.57L, -125881827325.591L},
         {-4043923627184.17L, 3575690969311.01L, 795204553555.504L},
 
-        {250000000000.L, -69570000000.L, 0.L},
-        {250000000000.L, -69570000000.L, 0.L},
+        {250000000000.L, -40000000000.L, 0.L},
+        {250000000000.L, -40000000000.L, 0.L},
 
         {-50000000000.L, 50000000000.L, 0.L},
         {0.L, 50000000000.L, 0.L},
@@ -786,4 +813,9 @@ void Canvas::paintEvent( QPaintEvent *e )
         QRect r = rects[(int)i];
         bitBlt( this, r.x(), r.y(), &buffer, r.x(), r.y(), r.width(), r.height() );
     }
+}
+
+void Canvas::setFramework(QString const & f)
+{
+    framework = f;
 }
