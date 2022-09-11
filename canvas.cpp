@@ -92,10 +92,13 @@ real Planet::NW(real, real, real)
 }
 
 
+namespace
+{
 void bitBlt( QPaintDevice * dst, int x, int y, const QPixmap* src, int sx, int sy, int sw, int sh )
 {
     QPainter p( dst );
     p.drawPixmap( x, y, *src, sx, sy, sw, sh );
+}
 }
 
 

@@ -27,7 +27,7 @@
        <enum>QTabWidget::South</enum>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab_4">
        <attribute name="title">
@@ -50,7 +50,7 @@
            <enum>QTabWidget::West</enum>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="tab_14">
            <attribute name="title">
@@ -68,7 +68,7 @@
            </attribute>
            <layout class="QHBoxLayout" name="horizontalLayout_21">
             <item>
-             <widget class="QWidget" name="widget_5" native="true"/>
+             <widget class="Elevator" name="widget_5" native="true"/>
             </item>
            </layout>
           </widget>
@@ -1542,7 +1542,16 @@ p, li { white-space: pre-wrap; }
   <customwidget>
    <class>Canvas</class>
    <extends>QWidget</extends>
-   <header location="global">canvas.h</header>
+   <header>canvas.h</header>
+   <container>1</container>
+   <slots>
+    <slot>reset()</slot>
+   </slots>
+  </customwidget>
+  <customwidget>
+   <class>Elevator</class>
+   <extends>QWidget</extends>
+   <header location="global">elevator.h</header>
    <container>1</container>
    <slots>
     <slot>reset()</slot>
@@ -1774,6 +1783,22 @@ p, li { white-space: pre-wrap; }
     <hint type="destinationlabel">
      <x>169</x>
      <y>305</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tabWidget_2</sender>
+   <signal>currentChanged(int)</signal>
+   <receiver>widget_5</receiver>
+   <slot>reset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>28</x>
+     <y>184</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>122</x>
+     <y>188</y>
     </hint>
    </hints>
   </connection>
