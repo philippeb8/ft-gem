@@ -10,5 +10,10 @@
         <file>png/dipoles.png</file>
         <file>mp4/lorentz.mp4</file>
         <file>mp4/fits.mp4</file>
+        <file>png/grc62.png</file>
+        <file>png/grc61.png</file>
+        <file>png/grc60.png</file>
+        <file>png/grc59.png</file>
+        <file>png/grc58.png</file>
     </qresource>
 </RCC>

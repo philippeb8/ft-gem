@@ -54,39 +54,17 @@
 #include <QNetworkProxyFactory>
 
 #include "analogclock.h"
-#include "ui_mainwindow.h"
+#include "mainwindow.h"
 
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
     QMainWindow win;
-    Ui::MainWindow window;
-
-    window.setupUi(& win);
-    window.ship_1->loadFile(":/png/ship1.png");
-    window.ship_2->loadFile(":/png/ship1.png");
-    window.ship_3->loadFile(":/png/ship2.png");
-    window.ship_4->loadFile(":/png/ship1.png");
-    window.missile_3->loadFile(":/png/missile.png");
-    window.video_1->setUrl(QUrl("qrc:/mp4/drive.mp4"));
-    //window.video_2->setUrl(QUrl("qrc:/mp4/lorentz.mp4"));
-    window.tides_1->loadFile(":/png/tides.png");
-    window.dipole_1->loadFile(":/png/dipoles.png");
-    window.video_3->setUrl(QUrl("qrc:/mp4/fits.mp4"));
+    MainWindow window(& win);
 
     QRect rec = QApplication::desktop()->screenGeometry();
     win.resize(rec.width(), rec.height());
     win.show();
-
-    window.widget_6->setFramework("General Relativity");
-
-    window.clock_1->startAt(100);
-    window.clock_2->startAt(1);
-    window.ship_1->startAt(100, 4.0);
-    window.ship_2->startAt(1, 4.0, 0.0, -1, -1, Qt::darkBlue);
-    window.missile_3->startAt(100, -300.0, 40.0, rec.width(), 100);
-    window.ship_4->startFor(1, rec.width() / 2);
-    window.video_1->play();
 
     return app.exec();
 }
