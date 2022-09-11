@@ -67,7 +67,10 @@ void BlackHole::setFramework(Framework aFramework)
             real const R = 8;
             real const d[2] = {sqrt((x - pos[0])*(x - pos[0]) + y*y), sqrt((x - pos[1])*(x - pos[1]) + y*y)};
 
-            return sqrt(pow((d[0] < R) ? (30 - 3 * M * (3 * R * R + d[0] * d[0]) / (2 * R * R * R)) : (50 * H / (M / d[0] + H)), 2) + pow((d[1] < R) ? (30 - 3 * M * (3 * R * R + d[1] * d[1]) / (2 * R * R * R)) : (50 * H / (M / d[1] + H)), 2)); // for demo purposes only
+            if (pos[0] < 0)
+                return sqrt(pow((d[0] < R) ? (30 - 3 * M * (3 * R * R + d[0] * d[0]) / (2 * R * R * R)) : (50 * H / (M / d[0] + H)), 2) + pow((d[1] < R) ? (30 - 3 * M * (3 * R * R + d[1] * d[1]) / (2 * R * R * R)) : (50 * H / (M / d[1] + H)), 2)); // for demo purposes only
+            else
+                return sqrt(pow((d[0] < 2 * R) ? (45 - 3 * M * (2 * 3 * R * R + d[0] * d[0]) / (2 * 2 * R * R * R)) : (50 * H / (M / d[0] + H)), 2)); // for demo purposes only
         };
         break;
     }
@@ -95,7 +98,7 @@ void BlackHole::timerEvent(QTimerEvent *)
         break;
 
     case eFT:
-        if (pos[0] < -4)
+        if (pos[0] < 0)
         {
             pos[0] += vel[0];
             pos[1] += vel[1];
