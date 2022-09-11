@@ -64,13 +64,20 @@ void BlackHole::setFramework(Framework aFramework)
     case eFT:
         f = [&](real x, real y) -> real
         {
-            real const R = 8;
             real const d[2] = {sqrt((x - pos[0])*(x - pos[0]) + y*y), sqrt((x - pos[1])*(x - pos[1]) + y*y)};
 
             if (pos[0] < 0)
+            {
+                real const R = 8;
+
                 return sqrt(pow((d[0] < R) ? (30 - 3 * M * (3 * R * R + d[0] * d[0]) / (2 * R * R * R)) : (50 * H / (M / d[0] + H)), 2) + pow((d[1] < R) ? (30 - 3 * M * (3 * R * R + d[1] * d[1]) / (2 * R * R * R)) : (50 * H / (M / d[1] + H)), 2)); // for demo purposes only
+            }
             else
-                return sqrt(pow((d[0] < 2 * R) ? (45 - 3 * M * (2 * 3 * R * R + d[0] * d[0]) / (2 * 2 * R * R * R)) : (50 * H / (M / d[0] + H)), 2)); // for demo purposes only
+            {
+                real const R = 8 * 1.5;
+
+                return sqrt(pow((d[0] < R) ? (4 - 3 * M * (3 * R * R + d[0] * d[0]) / (2 * R * R * R)) : (50 * H / (M / d[0] + H)), 2) + pow((d[0] < R) ? (4 - 3 * M * (3 * R * R + d[0] * d[0]) / (2 * R * R * R)) : (50 * H / (M / d[0] + H)), 2)); // for demo purposes only
+            }
         };
         break;
     }
