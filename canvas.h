@@ -52,7 +52,7 @@ typedef long double real;
 
 const real C = 299792458.L;
 const real G = 6.67428e-11L;
-const real H[] = {C*C/(G) / 2e7, 0., 1e20}; // demo purpuses only
+const real H[] = {C*C/(G) / 2e7, 0., 1e20}; // demo purposes only
 
 struct vector3
 {
