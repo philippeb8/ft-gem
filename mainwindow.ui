@@ -27,7 +27,7 @@
        <enum>QTabWidget::South</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tab_4">
        <attribute name="title">
@@ -97,7 +97,7 @@
            <enum>QTabWidget::West</enum>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>3</number>
           </property>
           <widget class="QWidget" name="tab_9">
            <attribute name="title">
@@ -283,6 +283,16 @@
            <layout class="QHBoxLayout" name="horizontalLayout_22">
             <item>
              <widget class="Canvas" name="widget_7" native="true"/>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_11">
+           <attribute name="title">
+            <string>Black Holes</string>
+           </attribute>
+           <layout class="QHBoxLayout" name="horizontalLayout_17">
+            <item>
+             <widget class="BlackHole" name="widget_8" native="true"/>
             </item>
            </layout>
           </widget>
@@ -1540,7 +1550,7 @@ p, li { white-space: pre-wrap; }
   <customwidget>
    <class>BlackHole</class>
    <extends>QWidget</extends>
-   <header location="global">black_hole.h</header>
+   <header location="global">blackhole.h</header>
    <container>1</container>
    <slots>
     <slot>reset()</slot>
@@ -1804,6 +1814,22 @@ p, li { white-space: pre-wrap; }
     <hint type="destinationlabel">
      <x>123</x>
      <y>343</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tabWidget_3</sender>
+   <signal>currentChanged(int)</signal>
+   <receiver>widget_8</receiver>
+   <slot>reset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>30</x>
+     <y>357</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>117</x>
+     <y>358</y>
     </hint>
    </hints>
   </connection>

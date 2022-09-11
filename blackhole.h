@@ -1,6 +1,8 @@
 #ifndef BLACKHOLE_H
 #define BLACKHOLE_H
 
+#include <functional>
+
 #include <QWidget>
 
 #include "graphui.h"
@@ -10,7 +12,12 @@ class BlackHole : public GraphUI
     Q_OBJECT
 
 public:
+    enum Framework {eGR, eFT} eFramework = eGR;
+
     BlackHole( QWidget *parent );
+
+    void setFramework(Framework aFramework);
+
     ~BlackHole();
 
 protected slots:
@@ -24,6 +31,7 @@ protected:
 
     void timerEvent( QTimerEvent *e );
 
+    std::function<real (real, real)> f;
     int pos[2], vel[2];
 };
 

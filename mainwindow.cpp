@@ -21,6 +21,7 @@ MainWindow::MainWindow(QMainWindow *MainWindow)
     video_3->setUrl(QUrl("qrc:/mp4/fits.mp4"));
 
     widget_6->setFramework("General Relativity");
+    widget_8->setFramework(BlackHole::eFT);
 
     clock_1->startAt(100);
     clock_2->startAt(1);

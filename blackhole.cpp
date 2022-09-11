@@ -1,4 +1,4 @@
-#include "black_hole.h"
+#include "blackhole.h"
 
 #include <QPainter>
 #include <QPaintEvent>
@@ -41,9 +41,36 @@ BlackHole::BlackHole( QWidget *parent )
     fxy.max.z = option.max.z - zrange / 2;
     fxy.scl.z = option.scl.z;
 
+    setFramework(eGR);
+
     reset();
 
     startTimer(100);
+}
+
+void BlackHole::setFramework(Framework aFramework)
+{
+    eFramework = aFramework;
+
+    switch (eFramework)
+    {
+    case eGR:
+        f = [&](real x, real y) -> real
+        {
+            return sqrt(pow(50 * H / (M / sqrt((x - pos[0])*(x - pos[0]) + y*y) + H), 2) + pow(50 * H / (M / sqrt((x - pos[1])*(x - pos[1]) + y*y) + H), 2)); // for demo purposes only
+        };
+        break;
+
+    case eFT:
+        f = [&](real x, real y) -> real
+        {
+            real const R = 8;
+            real const d[2] = {sqrt((x - pos[0])*(x - pos[0]) + y*y), sqrt((x - pos[1])*(x - pos[1]) + y*y)};
+
+            return sqrt(pow((d[0] < R) ? (30 - 3 * M * (3 * R * R + d[0] * d[0]) / (2 * R * R * R)) : (50 * H / (M / d[0] + H)), 2) + pow((d[1] < R) ? (30 - 3 * M * (3 * R * R + d[1] * d[1]) / (2 * R * R * R)) : (50 * H / (M / d[1] + H)), 2)); // for demo purposes only
+        };
+        break;
+    }
 }
 
 BlackHole::~BlackHole()
@@ -55,12 +82,25 @@ void BlackHole::timerEvent(QTimerEvent *)
     if (! isVisible())
         return;
 
-    plot([&](real x, real y) -> real { return 50 * H / (M / sqrt((x - pos[0])*(x - pos[0]) + y*y) + H) + 50 * H / (M / sqrt((x - pos[1])*(x - pos[1]) + y*y) + H); });
+    plot(f);
 
-    if (pos[0] < 0)
+    switch (eFramework)
     {
-        pos[0] += vel[0];
-        pos[1] += vel[1];
+    case eGR:
+        if (pos[0] < 0)
+        {
+            pos[0] += vel[0];
+            pos[1] += vel[1];
+        }
+        break;
+
+    case eFT:
+        if (pos[0] < -4)
+        {
+            pos[0] += vel[0];
+            pos[1] += vel[1];
+        }
+        break;
     }
 }
 

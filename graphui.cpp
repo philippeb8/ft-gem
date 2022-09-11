@@ -56,11 +56,6 @@ using namespace fdi;
 typedef mutable_ptr<type> type_p;
 
 
-extern variable_t variable[128];
-
-extern std::list<variable_t> stack[6];
-
-
 #if 1
 class GLWidgetUI : public QWidget
 {
@@ -232,7 +227,7 @@ QColor pColor[] =
 };
 
 
-bool GraphUI::fast = false;
+bool GraphUI::fast = true;
 
 
 /**
@@ -725,6 +720,9 @@ void GraphUI::draw_fx(QPainter & painter, int a_dx, int a_dy, bool init)
 		if (! init_fx(a_dx, a_dy)) 
 			return;
 
+        if (! fx.plot)
+            return;
+
 		if (option.z.grid)
 		{
 			// draw xy grid
@@ -1016,6 +1014,9 @@ void GraphUI::draw_fxy(QPainter & painter, int a_dx, int a_dy, bool init)
     if (init)
         if (! init_fxy(a_dx, a_dy))
             return;
+
+    if (! fxy.plot)
+        return;
 
     // screen precision
     if (GraphUI::fast != true)

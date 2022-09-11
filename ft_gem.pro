@@ -1,7 +1,7 @@
 QT += widgets multimedia multimediawidgets webkitwidgets
 
 HEADERS       = analogclock.h \
-  black_hole.h \
+  blackhole.h \
   calculus.h \
   canvas.h \
   dd.h \
@@ -23,7 +23,7 @@ HEADERS       = analogclock.h \
   vector.h \
   videoplayer.h
 SOURCES       = analogclock.cpp \
-                black_hole.cpp \
+                blackhole.cpp \
                 canvas.cpp \
                 elevator.cpp \
                 graphui.cpp \
