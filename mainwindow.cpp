@@ -22,6 +22,8 @@ MainWindow::MainWindow(QMainWindow *MainWindow)
 
     widget_6->setFramework("General Relativity");
     widget_8->setFramework(BlackHole::eFT);
+    widget_9->setType(Canvas::BB);
+    widget_9->reset();
 
     clock_1->startAt(100);
     clock_2->startAt(1);

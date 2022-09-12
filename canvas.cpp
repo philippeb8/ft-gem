@@ -225,30 +225,11 @@ inline void Planet::operator () (const vector<Planet> &planet, const real & uppe
     first = false;
 }
 
-Dual::Dual(Canvas * pParent, int id) : p(pParent), i(id)
-{
-	start();
-}
-
-void Dual::run()
-{
-    while (true)
-	{
-		// stop the processing until the tab becomes visible
-		while (! p->isVisible())
-			QThread::msleep(100);
-		
-		// move the same planet or photon according to Newton & FT
-		for (size_t j = 0; j < p->planet.size(); j ++)
-            p->planet[j][i](p->planet[j], upper);
-	}
-}
-
 const bool no_writing = false;
 
 Canvas::Canvas( QWidget *parent, Type eType, real scale )
     : QWidget( parent/*, name, Qt::WStaticContents*/ ),
-      eType(eType), pen( Qt::red, 3 ), polyline(3), mousePressed( false ), buffer( width(), height() ), scale(scale)
+      eType(eType), pen( Qt::red, 3 ), polyline(3), mousePressed( false ), buffer( width(), height() ), scale(scale), thread(this)
 {
 //	setAttribute(Qt::WA_PaintOutsidePaintEvent, true);
 	
@@ -261,11 +242,7 @@ Canvas::Canvas( QWidget *parent, Type eType, real scale )
     setCursor( Qt::CrossCursor );
 #endif
 
-	startTimer(100);
-
-	// launch a thread for each planet or photon
-	for (size_t i = 1; i < planet[0].size(); i ++)
-		new Dual(this, i);
+    startTimer(100);
 }
 
 Canvas::~Canvas()
@@ -407,27 +384,44 @@ void Canvas::slotGalaxy(int i)
     }
 }
 
+Dual::Dual(Canvas * pParent) : p(pParent)
+{
+    start();
+}
+
+void Dual::run()
+{
+    while (true)
+        for (size_t i = 1; i < p->planet[0].size(); ++ i)
+        {
+            for (size_t j = 0; j < p->planet.size(); ++ j)
+            {
+                // move the same planet or photon according to Newton & FT
+                for (size_t j = 0; j < p->planet.size(); j ++)
+                    p->planet[j][i](p->planet[j], upper);
+            }
+        }
+}
+
 void Canvas::timerEvent(QTimerEvent *)
 {
     if (! isVisible())
         return;
 
-	{
-        QRect r(planet[0][0].p[0] / scale - 40 + width()/2, planet[0][0].p[1] / scale - 40 + height()/2, 80, 80);
-        QPainter painter;
-		painter.begin( &buffer );
-		painter.setBrush(Qt::yellow);
-		painter.drawEllipse(r);
-		painter.end();
-		bitBlt( this, r.x(), r.y(), &buffer, r.x(), r.y(), r.width(), r.height() );
-
-		update(r);
-    }
-
     switch (eType)
     {
     case PP:
     case LB:
+        {
+            QRect r(planet[0][0].p[0] / scale - 40 + width()/2, planet[0][0].p[1] / scale - 40 + height()/2, 80, 80);
+            QPainter painter;
+            painter.begin( &buffer );
+            painter.setBrush(Qt::yellow);
+            painter.drawEllipse(r);
+            painter.end();
+            bitBlt( this, r.x(), r.y(), &buffer, r.x(), r.y(), r.width(), r.height() );
+        }
+
         for (size_t i = 1; i < planet[0].size(); ++ i)
         {
             for (size_t j = 0; j < planet.size(); ++ j)
@@ -478,24 +472,28 @@ void Canvas::timerEvent(QTimerEvent *)
             QPainter painter;
             painter.begin( &buffer );
             painter.setPen(QPen(planet[j][i].c, 8));
+            //painter.setBrush(planet[j][i].c);
+            //painter.drawEllipse(r);
             painter.drawLine(e.x(), e.y(), r.x(), r.y());
 
-            QString t = QString(planet[j][i].f == & Planet::NW ? "Newton" : framework);
-            QFont f = painter.font();
-            f.setPointSize(30);
-            QFontMetrics m(f);
-            QRect s = m.boundingRect(t);
-            painter.setFont(f);
-            painter.setPen(QPen(planet[j][i].c, 2));
-            painter.drawText(width() - b.width(), y, t);
-
-            y += s.height();
+            if (i < 2)
+            {
+                QString t = QString(planet[j][i].f == & Planet::NW ? "Newton" : framework);
+                QFont f = painter.font();
+                f.setPointSize(30);
+                QFontMetrics m(f);
+                QRect s = m.boundingRect(t);
+                painter.setFont(f);
+                painter.setPen(QPen(planet[j][i].c, 2));
+                painter.drawText(width() - b.width(), y, t);
+                y += s.height();
+            }
 
             painter.end();
         }
     }
 
-    repaint();
+    update();
 }
 
 void Canvas::reset()
@@ -560,14 +558,14 @@ void Canvas::reset()
         {-300000.L, 0.L, 0.L},
         {-300000.L, 0.L, 0.L},
 
-        {-50000.L, 50000.L, 0.L},
-        {0.L, 50000.L, 0.L},
-        {50000.L, 50000.L, 0.L},
-        {-80000L, 0.L, 0.L},
-        {80000L, 0.L, 0.L},
-        {-50000.L, -50000.L, 0.L},
-        {0.L, -50000.L, 0.L},
-        {50000.L, -50000.L, 0.L},
+        {-2000000.L, 2000000.L, 0.L},
+        {0.L, 2000000.L, 0.L},
+        {2000000.L, 2000000.L, 0.L},
+        {-2000000L, 0.L, 0.L},
+        {2000000L, 0.L, 0.L},
+        {-2000000.L, -2000000.L, 0.L},
+        {0.L, -2000000.L, 0.L},
+        {2000000.L, -2000000.L, 0.L},
 
         {0.L, 5.7749e-6L, 0.L},
         {0.L, 5.9249e-6L, 0.L},
@@ -601,14 +599,14 @@ void Canvas::reset()
     static const Planet Pioneer2   ("Pioneer2", 	Qt::darkRed, 258.8L, pos[29], vel[29], Planet::NW, Planet::V1);
 
     static const Planet Core	  ("Core", 		Qt::black, 2E+11L, pos[0], vel[0], Planet::NW, Planet::BB);
-    static const Planet Galaxy1   ("Galaxy1", 	Qt::red, 50000L, pos[12], vel[12], Planet::NW, Planet::BB);
-    static const Planet Galaxy2   ("Galaxy2", 	Qt::cyan, 50000L, pos[13], vel[13], Planet::NW, Planet::BB);
-    static const Planet Galaxy3   ("Galaxy3", 	Qt::blue, 50000L, pos[14], vel[14], Planet::NW, Planet::BB);
-    static const Planet Galaxy4   ("Galaxy4", 	Qt::yellow, 50000L, pos[15], vel[15], Planet::NW, Planet::BB);
-    static const Planet Galaxy5   ("Galaxy5", 	Qt::magenta, 50000L, pos[16], vel[16], Planet::NW, Planet::BB);
+    static const Planet Galaxy1   ("Galaxy1", 	Qt::darkRed, 50000L, pos[12], vel[12], Planet::NW, Planet::BB);
+    static const Planet Galaxy2   ("Galaxy2", 	Qt::darkRed, 50000L, pos[13], vel[13], Planet::NW, Planet::BB);
+    static const Planet Galaxy3   ("Galaxy3", 	Qt::darkRed, 50000L, pos[14], vel[14], Planet::NW, Planet::BB);
+    static const Planet Galaxy4   ("Galaxy4", 	Qt::darkRed, 50000L, pos[15], vel[15], Planet::NW, Planet::BB);
+    static const Planet Galaxy5   ("Galaxy5", 	Qt::darkRed, 50000L, pos[16], vel[16], Planet::NW, Planet::BB);
     static const Planet Galaxy6   ("Galaxy6", 	Qt::darkRed, 50000L, pos[17], vel[17], Planet::NW, Planet::BB);
-    static const Planet Galaxy7   ("Galaxy7", 	Qt::green, 50000L, pos[18], vel[18], Planet::NW, Planet::BB);
-    static const Planet Galaxy8   ("Galaxy8", 	Qt::darkBlue, 50000L, pos[19], vel[19], Planet::NW, Planet::BB);
+    static const Planet Galaxy7   ("Galaxy7", 	Qt::darkRed, 50000L, pos[18], vel[18], Planet::NW, Planet::BB);
+    static const Planet Galaxy8   ("Galaxy8", 	Qt::darkRed, 50000L, pos[19], vel[19], Planet::NW, Planet::BB);
 
     static const Planet Nucleus   ("Nucleus", 	Qt::black, 2E+12L, pos[0], vel[0], Planet::NW, Planet::GR);
     static const Planet Star1     ("Star1", 	Qt::red, 50000L, pos[20], vel[20], Planet::NW, Planet::GR);
@@ -688,9 +686,10 @@ void Canvas::reset()
         planet[1] = planet[0];
         for (size_t i = 0; i < planet[1].size(); i ++)
         {
-            planet[1][i].f = Planet::Planet::FR2;
+            planet[1][i].f = Planet::FR2;
             planet[1][i].h = H[1];
-            planet[1][i].c = planet[1][i].c.dark();
+            planet[1][i].c = planet[1][i].c.light().light();
+            planet[1][i].p += vector3(0.L, 10000000000.L, 0.L);
         }
 
         stats.resize(planet[0].size());
@@ -822,3 +821,9 @@ void Canvas::setFramework(QString const & f)
 {
     framework = f;
 }
+
+void Canvas::setType(Type aType)
+{
+    eType = aType;
+}
+

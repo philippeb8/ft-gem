@@ -254,18 +254,16 @@ struct Planet
 };
 
 class Canvas;
-	
+
 class Dual : public QThread
 {
 public:
-	Dual(Canvas *, int);
-	virtual void run();
-	
-protected:
-	Canvas * p;
-	int i;
-};
+       Dual(Canvas *);
+       virtual void run();
 
+protected:
+       Canvas * p;
+};
 
 class Canvas : public QWidget
 {
@@ -278,10 +276,11 @@ public:
     Canvas( QWidget *parent, Type eType = LB, real scale = 8e8L );
 
     void setFramework(QString const & f);
+    void setType(Type aType);
 
     ~Canvas();
 	
-protected slots:
+public slots:
 	void slotPlanet(int);
     void slotGalaxy(int);
     void reset();
@@ -292,7 +291,7 @@ protected:
     void mouseMoveEvent( QMouseEvent *e );
     void resizeEvent( QResizeEvent *e );
     void paintEvent( QPaintEvent *e );
-	void timerEvent( QTimerEvent *e );
+    void timerEvent( QTimerEvent *e );
 
     QString framework = "Finite Theory";
     QPen pen;
@@ -302,9 +301,11 @@ protected:
 
     QPixmap buffer;
 
-	std::vector< std::vector<Planet> > planet;
+    std::vector< std::vector<Planet> > planet;
 	
     real scale;
+
+    Dual thread;
 
     struct Stats
 	{
