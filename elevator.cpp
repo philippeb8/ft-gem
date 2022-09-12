@@ -19,7 +19,7 @@ Elevator::Elevator( QWidget *parent)
 {
     reset();
 
-    startTimer(100);
+    startTimer(50);
 }
 
 Elevator::~Elevator()

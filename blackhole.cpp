@@ -45,7 +45,7 @@ BlackHole::BlackHole( QWidget *parent )
 
     reset();
 
-    startTimer(100);
+    startTimer(50);
 }
 
 void BlackHole::setFramework(Framework aFramework)

@@ -97,7 +97,7 @@
            <enum>QTabWidget::West</enum>
           </property>
           <property name="currentIndex">
-           <number>1</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="tab_9">
            <attribute name="title">
@@ -237,7 +237,7 @@
             <item>
              <widget class="QToolBox" name="toolBox">
               <property name="currentIndex">
-               <number>2</number>
+               <number>1</number>
               </property>
               <widget class="QWidget" name="page_2">
                <property name="geometry">
@@ -455,8 +455,8 @@
               <widget class="QWidget" name="page_6">
                <property name="geometry">
                 <rect>
-                 <x>0</x>
-                 <y>-122</y>
+                 <x>-15</x>
+                 <y>0</y>
                  <width>1509</width>
                  <height>453</height>
                 </rect>
@@ -553,7 +553,7 @@
                    <string/>
                   </property>
                   <property name="pixmap">
-                   <pixmap resource="resource.qrc">:/png/Core4.png</pixmap>
+                   <pixmap resource="resource.qrc">:/png/Core2.png</pixmap>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignCenter</set>
@@ -572,7 +572,7 @@
                    <string/>
                   </property>
                   <property name="pixmap">
-                   <pixmap resource="resource.qrc">:/png/Core2.png</pixmap>
+                   <pixmap resource="resource.qrc">:/png/Core4.png</pixmap>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignCenter</set>

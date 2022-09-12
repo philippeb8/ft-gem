@@ -28,7 +28,7 @@ MainWindow::MainWindow(QMainWindow *MainWindow)
     clock_2->startAt(1);
     ship_1->startAt(100, 4.0);
     ship_2->startAt(1, 4.0, 0.0, -1, -1, Qt::darkBlue);
-    missile_3->startAt(100, -300.0, 40.0, MainWindow->width(), 100);
+    missile_3->startAt(100, -250.0, 40.0, MainWindow->width(), 100);
     ship_4->startFor(1, MainWindow->width() / 2);
     video_1->play();
 
