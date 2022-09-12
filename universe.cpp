@@ -32,7 +32,7 @@ void Universe::timerEvent(QTimerEvent *)
         return;
 
     {
-        QRect r(pos[0], height()/2 - 80, 160, 160);
+        QRect r(pos[0], height()/2 - (pos[0] * 200 / width()) / 2, (pos[0] * 200 / width()), (pos[0] * 200 / width()));
         QPainter painter;
         painter.begin( &buffer );
         painter.setBrush(Qt::black);
@@ -43,11 +43,11 @@ void Universe::timerEvent(QTimerEvent *)
         update(r);
     }
 
-    if (pos[0] + 180 < width() )
+    if (pos[0] + 200 < width() )
         pos[0] += vel[0];
 
     {
-        QRect r(pos[0], height()/2 - 80, 160, 160);
+        QRect r(pos[0], height()/2 - (pos[0] * 200 / width()) / 2, (pos[0] * 200 / width()), (pos[0] * 200 / width()));
         QPainter painter;
         painter.begin( &buffer );
         QColor c;
