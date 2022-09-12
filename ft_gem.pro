@@ -1,4 +1,4 @@
-QT += widgets multimedia multimediawidgets webkitwidgets
+QT += widgets multimedia multimediawidgets
 
 HEADERS       = analogclock.h \
   blackhole.h \
