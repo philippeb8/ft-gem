@@ -16,8 +16,7 @@ MainWindow::MainWindow(QMainWindow *MainWindow)
     missile_3->loadFile(":/png/missile.png");
     video_1->setUrl(QUrl("qrc:/mp4/drive.mp4"));
     //video_2->setUrl(QUrl("qrc:/mp4/lorentz.mp4"));
-    tides_1->loadFile(":/png/tides.png");
-    dipole_1->loadFile(":/png/dipoles.png");
+    //tides_1->loadFile(":/png/tides.png");
     video_3->setUrl(QUrl("qrc:/mp4/fits.mp4"));
 
     widget_6->setFramework("General Relativity");

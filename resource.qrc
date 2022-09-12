@@ -15,5 +15,21 @@
         <file>png/grc60.png</file>
         <file>png/grc59.png</file>
         <file>png/grc58.png</file>
+        <file>png/Core5.png</file>
+        <file>png/Core4.png</file>
+        <file>png/Core3.png</file>
+        <file>png/Core2.png</file>
+        <file>png/Core1.png</file>
+        <file>png/Hubble2.png</file>
+        <file>png/Hubble1.png</file>
+        <file>png/Energy_Density9.png</file>
+        <file>png/Energy_Density8.png</file>
+        <file>png/Energy_Density7.png</file>
+        <file>png/Energy_Density6.png</file>
+        <file>png/Energy_Density5.png</file>
+        <file>png/Energy_Density4.png</file>
+        <file>png/Energy_Density3.png</file>
+        <file>png/Energy_Density2.png</file>
+        <file>png/Energy_Density1.png</file>
     </qresource>
 </RCC>
