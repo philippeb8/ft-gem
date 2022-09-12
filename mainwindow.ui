@@ -97,7 +97,7 @@
            <enum>QTabWidget::West</enum>
           </property>
           <property name="currentIndex">
-           <number>5</number>
+           <number>6</number>
           </property>
           <widget class="QWidget" name="tab_9">
            <attribute name="title">
@@ -453,6 +453,11 @@
            <attribute name="title">
             <string>Inflation</string>
            </attribute>
+           <layout class="QHBoxLayout" name="horizontalLayout_20">
+            <item>
+             <widget class="Universe" name="widget_10" native="true"/>
+            </item>
+           </layout>
           </widget>
          </widget>
         </item>
@@ -1555,7 +1560,16 @@ p, li { white-space: pre-wrap; }
   <customwidget>
    <class>BlackHole</class>
    <extends>QWidget</extends>
-   <header location="global">blackhole.h</header>
+   <header>blackhole.h</header>
+   <container>1</container>
+   <slots>
+    <slot>reset()</slot>
+   </slots>
+  </customwidget>
+  <customwidget>
+   <class>Universe</class>
+   <extends>QWidget</extends>
+   <header location="global">universe.h</header>
    <container>1</container>
    <slots>
     <slot>reset()</slot>
@@ -1847,6 +1861,22 @@ p, li { white-space: pre-wrap; }
     <hint type="sourcelabel">
      <x>31</x>
      <y>605</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>149</x>
+     <y>600</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tabWidget_3</sender>
+   <signal>currentChanged(int)</signal>
+   <receiver>widget_10</receiver>
+   <slot>reset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>32</x>
+     <y>628</y>
     </hint>
     <hint type="destinationlabel">
      <x>149</x>

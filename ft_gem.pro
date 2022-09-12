@@ -20,6 +20,7 @@ HEADERS       = analogclock.h \
   tuple.h \
   type.h \
   unistd.h \
+  universe.h \
   vector.h \
   videoplayer.h
 SOURCES       = analogclock.cpp \
@@ -30,6 +31,7 @@ SOURCES       = analogclock.cpp \
                 imageviewer.cpp \
                 main.cpp \
                 mainwindow.cpp \
+                universe.cpp \
                 videoplayer.cpp
 
 QMAKE_PROJECT_NAME = ft_gem
