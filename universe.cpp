@@ -32,7 +32,19 @@ void Universe::timerEvent(QTimerEvent *)
         return;
 
     {
-        QRect r(pos[0], height()/2 - (pos[0] * 200 / width()) / 2, (pos[0] * 200 / width()), (pos[0] * 200 / width()));
+        QRect r;
+
+        switch (eFramework)
+        {
+        case eGR:
+                r = QRect(width()/2 - (pos[0] * 200 / width()) / 2, height()/2 - (pos[0] * 200 / width()) / 2, (pos[0] * 200 / width()), (pos[0] * 200 / width()));
+                break;
+
+        case eFT:
+                r = QRect(pos[0], height()/2 - (pos[0] * 200 / width()) / 2, (pos[0] * 200 / width()), (pos[0] * 200 / width()));
+                break;
+        }
+
         QPainter painter;
         painter.begin( &buffer );
         painter.setBrush(Qt::black);
@@ -47,7 +59,19 @@ void Universe::timerEvent(QTimerEvent *)
         pos[0] += vel[0];
 
     {
-        QRect r(pos[0], height()/2 - (pos[0] * 200 / width()) / 2, (pos[0] * 200 / width()), (pos[0] * 200 / width()));
+        QRect r;
+
+        switch (eFramework)
+        {
+        case eGR:
+                r = QRect(width()/2 - (pos[0] * 200 / width()) / 2, height()/2 - (pos[0] * 200 / width()) / 2, (pos[0] * 200 / width()), (pos[0] * 200 / width()));
+                break;
+
+        case eFT:
+                r = QRect(pos[0], height()/2 - (pos[0] * 200 / width()) / 2, (pos[0] * 200 / width()), (pos[0] * 200 / width()));
+                break;
+        }
+
         QPainter painter;
         painter.begin( &buffer );
         QColor c;
@@ -97,4 +121,9 @@ void Universe::paintEvent( QPaintEvent *e )
         QRect r = rects[(int)i];
         bitBlt( this, r.x(), r.y(), &buffer, r.x(), r.y(), r.width(), r.height() );
     }
+}
+
+void Universe::setFramework(Framework aFramework)
+{
+    eFramework = aFramework;
 }

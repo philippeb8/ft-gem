@@ -10,11 +10,6 @@
         <file>png/dipoles.png</file>
         <file>mp4/lorentz.mp4</file>
         <file>mp4/fits.mp4</file>
-        <file>png/grc62.png</file>
-        <file>png/grc61.png</file>
-        <file>png/grc60.png</file>
-        <file>png/grc59.png</file>
-        <file>png/grc58.png</file>
         <file>png/Core5.png</file>
         <file>png/Core4.png</file>
         <file>png/Core3.png</file>
@@ -31,5 +26,30 @@
         <file>png/Energy_Density3.png</file>
         <file>png/Energy_Density2.png</file>
         <file>png/Energy_Density1.png</file>
+        <file>png/grc70.png</file>
+        <file>png/grc69.png</file>
+        <file>png/grc67.png</file>
+        <file>png/grc63.png</file>
+        <file>png/grc62.png</file>
+        <file>png/grc59.png</file>
+        <file>png/grc57.png</file>
+        <file>png/grc55.png</file>
+        <file>png/grc51.png</file>
+        <file>png/grc47.png</file>
+        <file>png/grc45.png</file>
+        <file>png/grc39.png</file>
+        <file>png/grc34.png</file>
+        <file>png/grc33.png</file>
+        <file>png/grc29.png</file>
+        <file>png/grc22.png</file>
+        <file>png/grc15.png</file>
+        <file>png/grc10.png</file>
+        <file>png/Universe2.png</file>
+        <file>png/Result5.png</file>
+        <file>png/Result4.png</file>
+        <file>png/Result3.png</file>
+        <file>png/Result2.png</file>
+        <file>png/Result1.png</file>
+        <file>png/GravitationalRedshift.png</file>
     </qresource>
 </RCC>

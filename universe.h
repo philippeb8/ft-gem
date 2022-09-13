@@ -8,7 +8,12 @@ class Universe : public QWidget
     Q_OBJECT
 
 public:
+    enum Framework {eGR, eFT} eFramework = eGR;
+
     Universe( QWidget *parent );
+
+    void setFramework(Framework aFramework);
+
     ~Universe();
 
 protected slots:

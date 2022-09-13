@@ -27,6 +27,7 @@ MainWindow::MainWindow(QMainWindow *MainWindow)
     widget_9->thread.start();
 
     widget_8->setFramework(BlackHole::eFT);
+    widget_10->setFramework(Universe::eFT);
 
     clock_1->startAt(100);
     clock_2->startAt(1);
