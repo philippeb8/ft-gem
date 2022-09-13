@@ -2593,6 +2593,22 @@ p, li { white-space: pre-wrap; }
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>tabWidget</sender>
+   <signal>currentChanged(int)</signal>
+   <receiver>widget_6</receiver>
+   <slot>reset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>125</x>
+     <y>734</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>183</x>
+     <y>511</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>previousPage()</slot>
