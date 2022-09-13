@@ -260,9 +260,11 @@ class Dual : public QThread
 public:
        Dual(Canvas *);
        virtual void run();
+       ~Dual();
 
 protected:
        Canvas * p;
+       bool destroyed = false;
 };
 
 class Canvas : public QWidget
@@ -280,6 +282,8 @@ public:
 
     ~Canvas();
 	
+    Dual thread;
+
 public slots:
 	void slotPlanet(int);
     void slotGalaxy(int);
@@ -304,8 +308,6 @@ protected:
     std::vector< std::vector<Planet> > planet;
 	
     real scale;
-
-    Dual thread;
 
     struct Stats
 	{

@@ -386,12 +386,11 @@ void Canvas::slotGalaxy(int i)
 
 Dual::Dual(Canvas * pParent) : p(pParent)
 {
-    start();
 }
 
 void Dual::run()
 {
-    while (true)
+    while (! destroyed)
         for (size_t i = 1; i < p->planet[0].size(); ++ i)
         {
             for (size_t j = 0; j < p->planet.size(); ++ j)
@@ -401,6 +400,14 @@ void Dual::run()
                     p->planet[j][i](p->planet[j], upper);
             }
         }
+}
+
+Dual::~Dual()
+{
+    destroyed = true;
+
+    while (isRunning())
+        ;
 }
 
 void Canvas::timerEvent(QTimerEvent *)
@@ -753,7 +760,7 @@ void Canvas::reset()
     }
 
     buffer.fill( Qt::black );
-    repaint();
+    update();
 }
 
 void Canvas::mousePressEvent( QMouseEvent *e )
@@ -825,5 +832,7 @@ void Canvas::setFramework(QString const & f)
 void Canvas::setType(Type aType)
 {
     eType = aType;
+
+    reset();
 }
 
