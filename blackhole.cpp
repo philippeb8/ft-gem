@@ -107,8 +107,8 @@ void BlackHole::timerEvent(QTimerEvent *)
 void BlackHole::reset()
 {
     pos[0] = -100;
-    vel[0] = 1;
+    vel[0] = 2;
 
     pos[1] = 100;
-    vel[1] = -1;
+    vel[1] = -2;
 }
