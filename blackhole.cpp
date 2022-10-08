@@ -45,7 +45,7 @@ BlackHole::BlackHole( QWidget *parent )
 
     reset();
 
-    startTimer(50);
+    startTimer(4);
 }
 
 void BlackHole::setFramework(Framework aFramework)
@@ -64,8 +64,8 @@ void BlackHole::setFramework(Framework aFramework)
     case eFT:
         f = [&](real x, real y) -> real
         {
-            real const d[2] = {sqrt((x - pos[0])*(x - pos[0]) + y*y), sqrt((x - pos[1])*(x - pos[1]) + y*y)};
             real const R = 8;
+            real const d[2] = {sqrt((x - pos[0])*(x - pos[0]) + y*y), sqrt((x - pos[1])*(x - pos[1]) + y*y)};
 
             return sqrt(pow((d[0] < R) ? 2500.0/9 * (2 * R * R * R) / (M * (3 * R * R - d[0] * d[0])) : 50 * (H / (M / d[0] + H)), 2) + pow((d[1] < R) ? 2500.0/9 * (2 * R * R * R) / (M * (3 * R * R - d[1] * d[1])) : 50 * (H / (M / d[1] + H)), 2)); // for demo purposes only
         };
@@ -107,8 +107,8 @@ void BlackHole::timerEvent(QTimerEvent *)
 void BlackHole::reset()
 {
     pos[0] = -100;
-    vel[0] = 2;
+    vel[0] = 1;
 
     pos[1] = 100;
-    vel[1] = -2;
+    vel[1] = -1;
 }
