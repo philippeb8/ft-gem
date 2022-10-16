@@ -51,5 +51,23 @@
         <file>png/Result2.png</file>
         <file>png/Result1.png</file>
         <file>png/GravitationalRedshift.png</file>
+        <file>png/Velocity_Visible_Universe3.png</file>
+        <file>png/Velocity_Visible_Universe2.png</file>
+        <file>png/Velocity_Visible_Universe1.png</file>
+        <file>png/Visible_Universe5.png</file>
+        <file>png/Visible_Universe4.png</file>
+        <file>png/Visible_Universe3.png</file>
+        <file>png/Visible_Universe2.png</file>
+        <file>png/Visible_Universe1.png</file>
+        <file>png/GRC1.png</file>
+        <file>png/MHD_Vortex.JPG</file>
+        <file>png/Visible_Universe7.png</file>
+        <file>png/Visible_Universe6.png</file>
+        <file>png/Universal_Core6.png</file>
+        <file>png/Universal_Core5.png</file>
+        <file>png/Universal_Core4.png</file>
+        <file>png/Universal_Core3.png</file>
+        <file>png/Universal_Core2.png</file>
+        <file>png/Universal_Core1.png</file>
     </qresource>
 </RCC>
