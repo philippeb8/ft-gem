@@ -375,14 +375,14 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>1921</width>
-                 <height>1099</height>
+                 <width>1722</width>
+                 <height>408</height>
                 </rect>
                </property>
                <attribute name="label">
                 <string>Radii Range and Mass of the Visible Universe</string>
                </attribute>
-               <layout class="QGridLayout" name="gridLayout_5">
+               <layout class="QGridLayout" name="gridLayout_3">
                 <item row="0" column="0">
                  <widget class="QLabel" name="label_53">
                   <property name="text">
@@ -410,12 +410,12 @@
                  </widget>
                 </item>
                 <item row="1" column="0">
-                 <widget class="QLabel" name="label_55">
+                 <widget class="QLabel" name="label_56">
                   <property name="text">
                    <string/>
                   </property>
                   <property name="pixmap">
-                   <pixmap resource="resource.qrc">:/png/Visible_Universe4.png</pixmap>
+                   <pixmap resource="resource.qrc">:/png/Visible_Universe5.png</pixmap>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignCenter</set>
@@ -423,12 +423,12 @@
                  </widget>
                 </item>
                 <item row="1" column="1">
-                 <widget class="QLabel" name="label_56">
+                 <widget class="QLabel" name="label_55">
                   <property name="text">
                    <string/>
                   </property>
                   <property name="pixmap">
-                   <pixmap resource="resource.qrc">:/png/Visible_Universe5.png</pixmap>
+                   <pixmap resource="resource.qrc">:/png/Visible_Universe4.png</pixmap>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignCenter</set>
